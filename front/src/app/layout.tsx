@@ -2,6 +2,7 @@ import NavBar from '@/components/organisms/NavBar'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Footer from '@/components/molecules/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,13 +20,14 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-            <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-            </head>
-            <body className={inter.className}>
-              <NavBar />
-              {children}
-            </body>
-          </html>
-          )
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+      </head>
+      <body className={inter.className}>
+        <NavBar />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  )
 }
