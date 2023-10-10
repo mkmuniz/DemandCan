@@ -13,6 +13,23 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'standard': '#232120',
+        'custom-orange': '#F05123',
+        'custom-white': '#F1F3F4',
+      },
+      container: {
+        padding: {
+          DEFAULT: '1rem',
+          sm: '2rem',
+          lg: '4rem',
+          xl: '5rem',
+          '2xl': '6rem',
+        },
+      },
+      fontFamily: {
+        robot: ["Roboto"],
+      },
     },
   },
   plugins: [],
