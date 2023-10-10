@@ -1,6 +1,7 @@
 import React from "react";
 import DemandTableTitle from "../atoms/DemandTableTitle";
 import AddButton from "../atoms/AddButton";
+import Table from "./Table";
 
 export default function TableHome() {
     return <>
@@ -11,9 +12,7 @@ export default function TableHome() {
             <div>
                 <AddButton />
             </div>
-            <div>
-                
-            </div>
+            <Table />
         </div>
     </>;
 };

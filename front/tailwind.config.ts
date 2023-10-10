@@ -17,6 +17,8 @@ const config: Config = {
         'standard': '#232120',
         'custom-orange': '#F05123',
         'custom-white': '#F1F3F4',
+        'custom-gray-lighter': '#868586',
+        'custom-gray-darker': '#6E6F72',
       },
       container: {
         padding: {
