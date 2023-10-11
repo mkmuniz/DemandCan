@@ -1,4 +1,4 @@
-const baseUrl = process.env.API_BASE_URL;
+const baseUrl = process.env.API_BASE_URL || 'http://localhost:4000';
 
 export async function get(url: string) {
     const resp = await fetch(baseUrl + url,
@@ -10,9 +10,7 @@ export async function get(url: string) {
         })
     const data = await resp.json();
 
-    return {
-        body: data
-    }
+    return data;
 }
 
 export async function post(url: string, body: any) {
@@ -25,7 +23,5 @@ export async function post(url: string, body: any) {
     })
     const data = await resp.json();
 
-    return {
-        body: data
-    }
+    return data;
 }

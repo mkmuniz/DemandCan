@@ -3,7 +3,7 @@ import HomeContent from "../organisms/HomeContent";
 
 export default function HomeTemplate() {
     return <>
-        <div className="container">
+        <div className="container min-h-screen h-full">
             <HomeContent />
         </div>
     </>
