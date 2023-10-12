@@ -3,6 +3,7 @@
 import React from "react";
 import TableHead from "../atoms/TableHead";
 import TableDataCell from "../atoms/TableDataCell";
+import TableSkeletonLoader from "../loaders/TableSkeletonLoader";
 
 export default function TableRow({ data }: any) {
     return <>
