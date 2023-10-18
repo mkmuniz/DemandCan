@@ -1,14 +1,24 @@
-import React from "react";
+'use client'
+
+import React, { useState } from "react";
 import Logo from "../atoms/Logo";
 import HamburguerButton from "../atoms/Hamburguer";
 import PerfilIcon from "../atoms/Perfil";
+import SideNavBar from "../molecules/SideNavBar";
 
 export default function NavBar() {
+    const [isOpen, setStatus] = useState(false);
+
+    const getSideNavBarStatus = (value: any) => {
+        setStatus(value);
+    };
+
+    console.log(isOpen);
     return <>
         <div className="bg-standard w-full">
             <div className="flex items-center pl-3 pr-3">
                 <div className="pr-3">
-                    <HamburguerButton />
+                    <HamburguerButton getSideNavBarStatus={getSideNavBarStatus} />
                 </div>
                 <div className="">
                     <Logo />
@@ -18,5 +28,6 @@ export default function NavBar() {
                 </div>
             </div>
         </div>
+        <SideNavBar isOpen={isOpen} />
     </>;
 };

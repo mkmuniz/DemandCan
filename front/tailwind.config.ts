@@ -19,6 +19,7 @@ const config: Config = {
         'custom-white': '#F1F3F4',
         'custom-gray-lighter': '#868586',
         'custom-gray-darker': '#6E6F72',
+        'custom-orange-hover': '#f64210'
       },
       container: {
         padding: {
