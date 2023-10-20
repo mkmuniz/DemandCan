@@ -2,6 +2,7 @@ import React from "react";
 import DemandTableTitle from "../atoms/DemandTableTitle";
 import AddButton from "../atoms/AddButton";
 import Table from "./Table";
+import Modal from "./Modal";
 
 export default function TableHome() {
     return <>
@@ -10,7 +11,7 @@ export default function TableHome() {
                 <DemandTableTitle />
             </div>
             <div>
-                <AddButton />
+                <Modal />
             </div>
             <Table />
         </div>

@@ -13,7 +13,6 @@ export default function NavBar() {
         setStatus(value);
     };
 
-    console.log(isOpen);
     return <>
         <div className="bg-standard w-full">
             <div className="flex items-center pl-3 pr-3">

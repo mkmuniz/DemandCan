@@ -3,8 +3,6 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/ui/molecules/Footer'
 import TanstackProvider from '@/components/providers/TantaskProvider'
-import SideNavBar from '@/components/ui/molecules/SideNavBar'
-import { useEffect, useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
