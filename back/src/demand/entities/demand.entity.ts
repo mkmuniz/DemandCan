@@ -11,6 +11,6 @@ export class DemandEntity {
     @Column()
     sku: string
 
-    @Column()
+    @Column({ default: 'OPEN' })
     status: string
 };
