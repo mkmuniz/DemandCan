@@ -1,15 +1,30 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import AddButton from '../atoms/AddButton'
 import ConfirmButton from '../atoms/ConfirmButton'
 import InputDemandName from '../atoms/InputDemandName'
 import InputDemandSku from '../atoms/InputDemandSku'
+import { useMutation, useQuery } from '@tanstack/react-query'
+import { createDemand } from '@/api/demands'
+import { queryClient } from '@/api/queryClient'
 
 export default function Modal() {
-    const [open, setOpen] = useState(false)
-    const cancelButtonRef = useRef(null);
+    const [open, setOpen] = useState(false);
+    const [values, setValues] = useState(false);
+    const { status, error, mutate } = useMutation({
+        mutationFn: createDemand
+    });
 
+    const handleSubmit = () => {
+        try {
+            mutate(values);
+        } catch (err: any) {
+            console.error(status);
+            console.error(error);
+        };
+    };
+
+    const cancelButtonRef = useRef(null);
     return <>
         <AddButton setOpen={setOpen} />
         <Transition.Root show={open} as={Fragment}>
@@ -44,14 +59,14 @@ export default function Modal() {
                                                 Criar uma demanda
                                             </Dialog.Title>
                                             <div className="mt-2">
-                                                <InputDemandName />
-                                                <InputDemandSku />
+                                                <InputDemandName values={values} setValues={setValues} />
+                                                <InputDemandSku values={values} setValues={setValues} />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6 justify-center">
-                                    <ConfirmButton setOpen={setOpen} />
+                                    <ConfirmButton setOpen={setOpen} handleSubmit={handleSubmit} />
                                 </div>
                             </Dialog.Panel>
                         </Transition.Child>
