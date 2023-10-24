@@ -2,15 +2,18 @@ import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import AddButton from '../atoms/AddButton'
 import ConfirmButton from '../atoms/ConfirmButton'
-import InputDemandName from '../atoms/InputDemandName'
+import InputDemandName from '../atoms/InputDemandDescription'
 import InputDemandSku from '../atoms/InputDemandSku'
-import { useMutation, useQuery } from '@tanstack/react-query'
+import { useMutation } from '@tanstack/react-query'
 import { createDemand } from '@/api/demands'
-import { queryClient } from '@/api/queryClient'
 
 export default function Modal() {
     const [open, setOpen] = useState(false);
-    const [values, setValues] = useState(false);
+    const [values, setValues] = useState({
+        description: "",
+        SKU: "",
+        status: "OPEN"
+    });
     const { status, error, mutate } = useMutation({
         mutationFn: createDemand
     });
@@ -19,8 +22,7 @@ export default function Modal() {
         try {
             mutate(values);
         } catch (err: any) {
-            console.error(status);
-            console.error(error);
+            console.error(err);
         };
     };
 
