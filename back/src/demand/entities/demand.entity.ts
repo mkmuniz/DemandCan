@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, BeforeInsert, Entity, PrimaryGeneratedColumn } from "typeorm";
+import moment from "moment";
 
 @Entity()
 export class DemandEntity {
@@ -11,6 +12,12 @@ export class DemandEntity {
     @Column()
     sku: string
 
+    @Column()
+    totalPlan: string
+
     @Column({ default: 'OPEN' })
     status: string
+
+    @CreateDateColumn()
+    createdAt: Date
 };
