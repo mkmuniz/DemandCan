@@ -14,11 +14,14 @@
     "@tanstack/react-query": "^4.36.1",
     "@tanstack/react-query-devtools": "^4.36.1",
     "@tanstack/react-query-next-experimental": "^5.0.0-alpha.80",
+    "@types/react-datepicker": "^4.19.1",
+    "dayjs": "^1.11.10",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
-    "react-query": "^3.39.3"
+    "react-query": "^3.39.3",
+    "react-tailwindcss-datepicker": "^1.6.6"
   },
   "devDependencies": {
     "@types/node": "^20",

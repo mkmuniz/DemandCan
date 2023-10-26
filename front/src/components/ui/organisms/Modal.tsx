@@ -2,10 +2,15 @@ import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import AddButton from '../atoms/AddButton'
 import ConfirmButton from '../atoms/ConfirmButton'
-import InputDemandName from '../atoms/InputDemandDescription'
+import InputDemandName from '../atoms/InputStartDate'
 import InputDemandSku from '../atoms/InputDemandSku'
 import { useMutation } from '@tanstack/react-query'
 import { createDemand } from '@/api/demands'
+import { createStock } from '@/api/stocks'
+import InputStockStartDate from '../atoms/InputStartDate'
+import InputDate from '../atoms/InputStartDate'
+import InputEndDate from '../atoms/InputEndDate'
+import InputStartDate from '../atoms/InputStartDate'
 
 export default function Modal() {
     const [open, setOpen] = useState(false);
@@ -15,7 +20,7 @@ export default function Modal() {
         status: "OPEN"
     });
     const { status, error, mutate } = useMutation({
-        mutationFn: createDemand
+        mutationFn: createStock
     });
 
     const handleSubmit = () => {
@@ -58,11 +63,11 @@ export default function Modal() {
                                     <div className="sm:flex sm:items-start">
                                         <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
                                             <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900 text-center">
-                                                Criar uma demanda
+                                                Criar um estoque
                                             </Dialog.Title>
                                             <div className="mt-2">
-                                                <InputDemandName values={values} setValues={setValues} />
-                                                <InputDemandSku values={values} setValues={setValues} />
+                                                <InputStartDate values={values} setValues={setValues} />
+                                                <InputEndDate values={values} setValues={setValues} />
                                             </div>
                                         </div>
                                     </div>
