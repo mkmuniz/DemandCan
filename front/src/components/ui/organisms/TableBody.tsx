@@ -3,10 +3,10 @@
 import React, { Suspense } from "react";
 import TableRow from "../molecules/TableRow";
 import { useQuery } from "@tanstack/react-query";
-import { getAllDemands } from "@/api/demands";
+import { getAllStocks } from "@/api/stocks";
 
 export default function TableBody() {
-    const { data } = useQuery({ queryKey: ['demands'], queryFn: getAllDemands, suspense: true })
+    const { data } = useQuery({ queryKey: ['stocks'], queryFn: getAllStocks, suspense: true })
 
     return <>
         <tbody>

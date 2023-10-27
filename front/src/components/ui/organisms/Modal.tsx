@@ -2,15 +2,11 @@ import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import AddButton from '../atoms/AddButton'
 import ConfirmButton from '../atoms/ConfirmButton'
-import InputDemandName from '../atoms/InputStartDate'
-import InputDemandSku from '../atoms/InputDemandSku'
 import { useMutation } from '@tanstack/react-query'
-import { createDemand } from '@/api/demands'
 import { createStock } from '@/api/stocks'
-import InputStockStartDate from '../atoms/InputStartDate'
-import InputDate from '../atoms/InputStartDate'
-import InputEndDate from '../atoms/InputEndDate'
 import InputStartDate from '../atoms/InputStartDate'
+import InputEndDate from '../atoms/InputEndDate'
+import InputStatusStock from '../atoms/InputStatusStock'
 
 export default function Modal() {
     const [open, setOpen] = useState(false);
@@ -30,7 +26,7 @@ export default function Modal() {
             console.error(err);
         };
     };
-
+    
     const cancelButtonRef = useRef(null);
     return <>
         <AddButton setOpen={setOpen} />
@@ -68,6 +64,7 @@ export default function Modal() {
                                             <div className="mt-2">
                                                 <InputStartDate values={values} setValues={setValues} />
                                                 <InputEndDate values={values} setValues={setValues} />
+                                                <InputStatusStock values={values} setValues={setValues} />
                                             </div>
                                         </div>
                                     </div>
