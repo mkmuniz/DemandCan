@@ -17,7 +17,7 @@ export class DemandController {
     return this.demandService.createDemand(body);
   }
 
-  @Patch()
+  @Patch(':id')
   updateDemand(@Param() params: any, @Body() body: any): Promise<UpdateResult> {
     return this.demandService.updateDemand(params.id, body);
   }
