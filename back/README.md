@@ -1,73 +1,121 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# 🥫 SMI-LATINHAS-LLC
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+This API was created for SMI-Latinhas-LLC project, in this document you will to learn how to run the API and his end-points.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Configuration
 
-## Description
+1. Enter into the folder `/back` in bash
+2. Type `npm i`
+3. Create a `.env` file with this informations:
+```env
+PORT=4000
+```
+4. Run the API with `npm run start:dev`
+5. Server will be listening on `http://localhost:4000`
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+# 📁 Demand End-points
+### GET /demand
+This request returns all demands presents in database.
 
-## Installation
-
-```bash
-$ npm install
+### Response: 200
+```json
+[
+    {
+        "id": 1,
+        "description": "Teste",
+        "sku": "324235",
+        "totalPlan": "23425",
+        "status": "OPEN",
+        "createdAt": "2023-10-28T18:47:30.000Z"
+    },
+    {
+        "id": 2,
+        "description": "Teste",
+        "sku": "324235",
+        "totalPlan": "23425",
+        "status": "OPEN",
+        "createdAt": "2023-10-28T18:50:21.000Z"
+    },
+    {
+        "id": 3,
+        "description": "Teste",
+        "sku": "324235",
+        "totalPlan": "23425",
+        "status": "OPEN",
+        "createdAt": "2023-10-28T18:50:33.000Z"
+    },
+    {
+        "id": 4,
+        "description": "Teste",
+        "sku": "324235",
+        "totalPlan": "23425",
+        "status": "OPEN",
+        "createdAt": "2023-10-28T18:50:35.000Z"
+    }
+]
 ```
 
-## Running the app
 
-```bash
-# development
-$ npm run start
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+### POST /demand
+This request creates a new demand.
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+### Body (**raw**)
+```json
+{
+    "description": "Teste",
+    "sku": "324235",
+    "totalPlan": "23425",
+    "status": "OPEN"
+}
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+### Response: 201
+```json
+{
+    "description": "Teste",
+    "sku": "324235",
+    "totalPlan": "23425",
+    "status": "OPEN",
+    "id": 1,
+    "createdAt": "2023-10-28T18:47:30.000Z"
+}
 ```
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+### PATCH /demand/:id
+This requests update the body of an object already created, so you need to pass his `id` to find this object and pass the property that you want to modify in body, follow this example below:
 
-## Stay in touch
+### Body (**raw**)
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```json
+{
+  "status": "CLOSED"
+}
+```
 
-## License
+### Response: 200
+```json
+{
+    "generatedMaps": [],
+    "raw": [],
+    "affected": 1
+}
+```
 
-Nest is [MIT licensed](LICENSE).
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
+### DELETE /demand/:id
+This request delete a demand by id passed in params, follow the example below:
+
+### Response: 200
+```json
+{
+    "raw": [],
+    "affected": 1
+}
+```
+
+
+⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃ ⁃
