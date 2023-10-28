@@ -17,6 +17,6 @@ Make sure you have the following requirements installed on your machine:
 git clone https://github.com/mkmuniz/smi-challenge-latinhas-llc
 ```
 
-2. Follow those instructions in this [`README`](https://github.com/mkmuniz/smi-challenge-latinhas-llc/front/README.md) to run the Front End
+2. Follow those instructions in this [`README`](https://github.com/mkmuniz/smi-challenge-latinhas-llc/blob/main/front/README.md) to run the Front End
 
-3. Follow those instructions in this [`README`](https://github.com/mkmuniz/smi-challenge-latinhas-llc/back/README.md) to run the Back End
+3. Follow those instructions in this [`README`](https://github.com/mkmuniz/smi-challenge-latinhas-llc/blob/main/back/README.md) to run the Back End
