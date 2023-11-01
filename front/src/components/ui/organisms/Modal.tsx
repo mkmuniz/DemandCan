@@ -5,7 +5,6 @@ import ConfirmButton from '../atoms/ConfirmButton'
 import { useMutation } from '@tanstack/react-query'
 import { createStock } from '@/api/stocks'
 import InputStartDate from '../atoms/InputStartDate'
-import InputEndDate from '../atoms/InputEndDate'
 import InputStatusStock from '../atoms/InputStatusStock'
 
 export default function Modal() {
@@ -44,7 +43,7 @@ export default function Modal() {
                     <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
                 </Transition.Child>
                 <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-                    <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                    <div className="flex min-h-full w-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                         <Transition.Child
                             as={Fragment}
                             enter="ease-out duration-300"
@@ -63,7 +62,6 @@ export default function Modal() {
                                             </Dialog.Title>
                                             <div className="mt-2">
                                                 <InputStartDate values={values} setValues={setValues} />
-                                                <InputEndDate values={values} setValues={setValues} />
                                                 <InputStatusStock values={values} setValues={setValues} />
                                             </div>
                                         </div>

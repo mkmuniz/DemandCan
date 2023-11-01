@@ -19,7 +19,7 @@ export default function NavBar() {
                 <div className="pr-3">
                     <HamburguerButton getSideNavBarStatus={getSideNavBarStatus} />
                 </div>
-                <div className="">
+                <div className="bg-standard">
                     <Logo />
                 </div>
                 <div className="ml-auto">
