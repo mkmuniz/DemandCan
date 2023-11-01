@@ -1,6 +1,6 @@
-# 🥫 SMI-LATINHAS-LLC
+# 🥫 DemandCan
 
-This API was created for SMI-Latinhas-LLC project, in this document you will to learn how to run the API and his end-points.
+This API was created for DemandCan project, in this document you will to learn how to run the API and his end-points.
 
 # Configuration
 
